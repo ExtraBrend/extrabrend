@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="az">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Extra Brend — Yeni Kolleksiya</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Extra Brend — minimalist və premium geyim və aksesuarlar. Yeni kolleksiya indi mövcuddur." />
+  <style>
+    :root{--bg:#ffffff;--surface:#f8f9fb;--text:#0f1720;--muted:#6b7280;--accent:#111827;--radius:12px}
+    *{box-sizing:border-box}html,body{height:100%;margin:0;font-family:'Montserrat',system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;color:var(--text);background:var(--bg)}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    header{position:sticky;top:0;background:linear-gradient(180deg,rgba(255,255,255,0.95),rgba(255,255,255,0.85));backdrop-filter:blur(6px);border-bottom:1px solid #eef2f7;z-index:60}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:48px;height:48px;display:inline-grid;place-items:center;border-radius:10px;background:linear-gradient(180deg,#f3f4f6,#ffffff);box-shadow:0 6px 18px rgba(16,24,40,0.06)}
+    .logo svg{width:34px;height:34px}
+    .nav-links{display:flex;gap:14px;align-items:center}
+    .nav-links a{color:var(--muted);text-decoration:none;font-weight:600}
+    .cta{padding:8px 14px;border-radius:10px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700}
+
+    .lang-select{display:flex;align-items:center;gap:8px}
+    .lang-select select{padding:8px;border-radius:10px;border:1px solid #eef2f7;background:#fff}
+
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:48px 0}
+    .hero-left h2{font-size:30px;line-height:1.02;margin:0 0 12px;font-weight:700}
+    .hero-left p{color:var(--muted);margin:0 0 18px}
+    .buttons{display:flex;gap:10px}
+    .btn-primary{background:var(--accent);color:#fff;padding:12px 16px;border-radius:10px;text-decoration:none;font-weight:700}
+    .btn-ghost{background:transparent;padding:10px 14px;border-radius:10px;border:1px solid #eef2f7;color:var(--text);text-decoration:none}
+
+    section{padding:36px 0}
+    h3.section-title{font-size:20px;margin:0 0 12px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{background:#fff;border-radius:12px;padding:12px;border:1px solid #f1f5f9;transition:transform .18s ease}
+    .card:hover{transform:translateY(-6px)}
+    .card img{width:100%;height:220px;object-fit:cover;border-radius:8px}
+    .card h4{margin:10px 0 6px}
+    .price{font-weight:700}
+
+    .quick{max-width:780px}
+    input,select,textarea{width:100%;padding:12px;border-radius:10px;border:1px solid #eef2f7;font-size:15px}
+    .row{display:flex;gap:10px}
+    button{cursor:pointer}
+    .btn-white{background:#fff;border:1px solid #eef2f7;padding:10px 12px;border-radius:10px}
+    .fav{background:transparent;border:none;font-size:18px;cursor:pointer}
+
+    .fav-list{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .fav-item{background:#fff;padding:10px;border-radius:10px;border:1px solid #eef2f7}
+
+    footer{padding:20px 0;color:var(--muted);border-top:1px solid #eef2f7;text-align:center}
+
+    @media(max-width:980px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.fav-list{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:640px){.grid{grid-template-columns:1fr}.nav-links{display:none}.fav-list{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">
+          <div class="logo" aria-hidden>
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><g transform="translate(6,6)"><path d="M4 4h20a6 6 0 010 12H4z" fill="none" stroke="#111827" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path><path d="M4 20h12a6 6 0 000-12H4z" fill="#111827"></path></g></svg>
+          </div>
+          <div>
+            <div style="font-weight:700">Extra Brend</div>
+            <div style="font-size:12px;color:var(--muted)">Minimal • Müasir</div>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:16px">
+          <div class="lang-select">
+            <label for="lang" style="font-size:13px;color:var(--muted);">Dil:</label>
+            <select id="lang" aria-label="Dil seçimi"></select>
+          </div>
+
+          <div class="nav-links">
+            <a href="#products">Məhsullar</a>
+            <a href="#collection">Yeni Kolleksiya</a>
+            <a href="#favorites" id="openFavoritesLink">Favorilərim ❤️</a>
+            <a href="#order">Qeydiyyat</a>
+            <a class="cta" href="#products">Alış-veriş</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-left">
+        <h2 data-i18n>Sadəlik — zövq
+        <br>Premium keyfiyyətlə qarşılaşır.</h2>
+        <p data-i18n>Sənin üçün seçilmiş saatlar, qolbaqlar və çantalar. Yeni kolleksiyamız indi mövcuddur.</p>
+        <div class="buttons">
+          <a class="btn-primary" href="#collection" data-i18n>Bütün kolleksiya</a>
+          <a class="btn-ghost" href="#products" data-i18n>Bütün Məhsullar</a>
+        </div>
+        <div style="margin-top:12px;color:var(--muted)" data-i18n>📞 Sifariş: <strong>077 323 17 05</strong></div>
+      </div>
+      <div class="hero-right"><img src="https://via.placeholder.com/420x320.png?text=Yeni+Kolleksiya" alt="Yeni Kolleksiya"></div>
+    </section>
+
+    <section id="collection">
+      <h3 class="section-title" data-i18n>Yeni Kolleksiya</h3>
+      <div style="display:flex;gap:12px;overflow:auto">
+        <div style="min-width:220px;background:#fff;padding:10px;border-radius:10px;border:1px solid #eef2f7"><img src="https://via.placeholder.com/400x260.png?text=Kolleksiya+1" style="width:100%;border-radius:8px"><div style="font-weight:700;margin-top:8px" data-i18n>Minimal Saat</div><div style="color:var(--muted)" data-i18n>50 AZN</div></div>
+        <div style="min-width:220px;background:#fff;padding:10px;border-radius:10px;border:1px solid #eef2f7"><img src="https://via.placeholder.com/400x260.png?text=Kolleksiya+2" style="width:100%;border-radius:8px"><div style="font-weight:700;margin-top:8px" data-i18n>Zərif Qolbaq</div><div style="color:var(--muted)" data-i18n>20 AZN</div></div>
+        <div style="min-width:220px;background:#fff;padding:10px;border-radius:10px;border:1px solid #eef2f7"><img src="https://via.placeholder.com/400x260.png?text=Kolleksiya+3" style="width:100%;border-radius:8px"><div style="font-weight:700;margin-top:8px" data-i18n>Trend Çanta</div><div style="color:var(--muted)" data-i18n>40 AZN</div></div>
+      </div>
+    </section>
+
+    <section id="products">
+      <h3 class="section-title" data-i18n>Populyar Məhsullar</h3>
+      <div class="grid" id="productsGrid">
+        <!-- product items will be injected here by JS -->
+      </div>
+    </section>
+
+    <section id="order">
+      <h3 class="section-title" data-i18n>Qeydiyyat (sadə + təsdiq)</h3>
+      <p class="muted" data-i18n>Bir dəfə qeydiyyatdan keç — sonrakı alışlarda adın və nömrən avtomatik doldurulsun.</p>
+      <div style="max-width:520px;margin-top:12px">
+        <form id="registerSimple" style="display:flex;flex-direction:column;gap:10px">
+          <div class="row">
+            <input id="regName" placeholder="Ad" data-i18n-placeholder="Ad" required>
+            <input id="regSurname" placeholder="Soyad" data-i18n-placeholder="Soyad" required>
+          </div>
+          <input id="regPhone" placeholder="Telefon (077xxxxxxx)" data-i18n-placeholder="Telefon (077xxxxxxx)" required>
+          <div style="display:flex;gap:8px">
+            <input id="regCode" placeholder="Kod (göndər və təsdiq)" data-i18n-placeholder="Kod (göndər və təsdiq)" style="flex:1">
+            <button id="sendCodeBtn" type="button" class="btn-white" data-i18n>Kod göndər</button>
+            <button id="verifyBtn" type="button" class="btn-white" data-i18n>Təsdiqlə</button>
+          </div>
+          <input id="regEmail" placeholder="E-mail (isteğe bağlı)" data-i18n-placeholder="E-mail (isteğe bağlı)">
+          <div style="display:flex;gap:10px"><button id="regSave" type="button" class="btn-primary" style="flex:1" data-i18n>Qeydiyyat et</button><button id="regClear" type="button" class="btn-white" data-i18n>Təmizlə</button></div>
+          <div id="regMsg" style="color:var(--muted);font-size:14px"></div>
+        </form>
+      </div>
+    </section>
+
+    <section id="favorites" style="margin-top:18px">
+      <h3 class="section-title" data-i18n>Favorilərim</h3>
+      <div id="favoritesList" class="fav-list"></div>
+    </section>
+
+    <section id="contact">
+      <h3 class="section-title" data-i18n>Əlaqə</h3>
+      <p class="muted" data-i18n>Telefon: <strong>077 323 17 05</strong></p>
+    </section>
+
+  </main>
+
+  <footer>© 2025 Extra Brend — Bütün hüquqlar qorunur</footer>
+
+  <!-- Google Translate Web Element (client-side). Requires internet. -->
+  <script>
+    // List of 50 languages (code => label)
+    const LANGS = [
+      ['az','Azərbaycan'],['en','English'],['tr','Türkçe'],['ru','Русский'],['ar','العربية'],['fr','Français'],['de','Deutsch'],['es','Español'],['it','Italiano'],['pt','Português'],
+      ['nl','Nederlands'],['pl','Polski'],['sv','Svenska'],['da','Dansk'],['no','Norsk'],['fi','Suomi'],['cs','Čeština'],['sk','Slovenčina'],['hu','Magyar'],['ro','Română'],
+      ['bg','Български'],['sr','Српски'],['hr','Hrvatski'],['sl','Slovenščina'],['el','Ελληνικά'],['he','עברית'],['hi','हिन्दी'],['bn','বাংলা'],['ur','اردو'],['vi','Tiếng Việt'],
+      ['th','ไทย'],['id','Bahasa Indonesia'],['ms','Bahasa Melayu'],['zh-CN','简体中文'],['zh-TW','繁體中文'],['ja','日本語'],['ko','한국어'],['ta','தமிழ்'],['te','తెలుగు'],['mr','मराठी'],
+      ['ml','മലയാളം'],['kn','ಕನ್ನಡ'],['gu','ગુજરાતી'],['pa','ਪੰਜਾਬੀ'],['am','አማርኛ'],['sw','Kiswahili'],['eo','Esperanto'],['la','Latin'],['is','Íslenska'],['lv','Latviešu']
+    ];
+
+    // populate the select
+    const langSelect = document.getElementById('lang');
+    LANGS.forEach(([code,label])=>{
+      const o = document.createElement('option'); o.value = code; o.textContent = label; langSelect.appendChild(o);
+    });
+
+    // Load Google Translate widget script dynamically
+    function loadGoogleTranslate(){
+      if(window.google && google.translate) return initGTranslate();
+      const s = document.createElement('script');
+      s.src = 'https://translate.google.com/translate_a/element.js?cb=initGTranslate';
+      document.head.appendChild(s);
+    }
+
+    function initGTranslate(){
+      try{
+        new google.translate.TranslateElement({pageLanguage: 'az', includedLanguages: LANGS.map(l=>l[0]).join(','), layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay:false}, 'google_translate_element');
+      }catch(e){console.warn('Google translate init failed',e)}
+    }
+
+    // change language when user selects
+    langSelect.addEventListener('change',(e)=>{
+      const code = e.target.value;
+      // if widget not loaded, load it first
+      if(!window.google || !google.translate){ loadGoogleTranslate(); setTimeout(()=>applyLang(code),800); }
+      else applyLang(code);
+    });
+
+    function applyLang(code){
+      try{
+        const iframe = document.querySelector('iframe.goog-te-menu-frame');
+        if(!iframe){
+          // create a hidden widget container and init then try again
+          const d = document.createElement('div'); d.id='google_translate_element'; d.style.display='none'; document.body.appendChild(d);
+          initGTranslate();
+          setTimeout(()=>applyLang(code),800);
+          return;
+        }
+        // find inside the iframe the language link
+        const innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+        const langLinks = innerDoc.querySelectorAll('.goog-te-menu2-item span.text');
+        for(const el of langLinks){
+          const lang = el.textContent.trim();
+          // match by label from our list
+          const match = LANGS.find(l=>l[1]===lang || l[0]===lang);
+          if(match && match[0]===code){ el.click(); return; }
+        }
+        // fallback: try to set value on select if exists
+        const select = document.querySelector('#google_translate_element select');
+        if(select){ select.value = code; select.dispatchEvent(new Event('change')); }
+      }catch(e){
+        console.warn('applyLang error',e);
+      }
+    }
+
+    // Try to preload widget for faster UX
+    loadGoogleTranslate();
+
+  </script>
+
+  <script>
+    // existing app logic (products, favorites, registration, quick order)
+    const PRODUCTS = [
+      {id:1,title:'Minimal Saat',price:'50 AZN',img:'https://via.placeholder.com/720x480.png?text=Saat'},
+      {id:2,title:'Zərif Qolbaq',price:'20 AZN',img:'https://via.placeholder.com/720x480.png?text=Qolbaq'},
+      {id:3,title:'Trend Çanta',price:'40 AZN',img:'https://via.placeholder.com/720x480.png?text=Çanta'},
+      {id:4,title:'Paltar',price:'60 AZN',img:'https://via.placeholder.com/720x480.png?text=Paltar'}
+    ];
+    const productsGrid = document.getElementById('productsGrid');
+    function renderProducts(){
+      productsGrid.innerHTML = '';
+      const favs = JSON.parse(localStorage.getItem('eb_favs')||'[]');
+      PRODUCTS.forEach(p=>{
+        const inFav = favs.includes(p.id);
+        const div = document.createElement('div'); div.className='card';
+        div.innerHTML = `
+          <img src="${p.img}" alt="${p.title}">
+          <h4 data-i18n>${p.title}</h4>
+          <div class="price">${p.price}</div>
+          <div style="display:flex;gap:8px;margin-top:8px;align-items:center">
+            <button class="btn-white" data-id="${p.id}" onclick="quickOrder(${p.id})" data-i18n>Sifariş et</button>
+            <button class="fav" title="Favoriyə əlavə et" data-id="${p.id}" aria-pressed="${inFav}">${inFav? '💖':'🤍'}</button>
+          </div>`;
+        productsGrid.appendChild(div);
+      });
+      document.querySelectorAll('.fav').forEach(b=>b.addEventListener('click',toggleFav));
+    }
+
+    function quickOrder(id){
+      const user = JSON.parse(localStorage.getItem('eb_user')||'null');
+      const p = PRODUCTS.find(x=>x.id===id);
+      const namePart = user? `Mənim adım ${encodeURIComponent(user.name+' '+user.surname)}.` : '';
+      const phonePart = user? `Telefon: ${encodeURIComponent(user.phone)}.` : '';
+      const msg = `Salam, ${namePart} ${phonePart} Mən ${encodeURIComponent(p.title)} sifariş etmək istəyirəm.`;
+      const wa = `https://wa.me/0773231705?text=${msg}`;
+      window.open(wa,'_blank');
+    }
+
+    function toggleFav(e){
+      const id = parseInt(e.currentTarget.dataset.id);
+      const favs = JSON.parse(localStorage.getItem('eb_favs')||'[]');
+      const idx = favs.indexOf(id);
+      if(idx>-1) favs.splice(idx,1); else favs.push(id);
+      localStorage.setItem('eb_favs', JSON.stringify(favs)); renderProducts(); renderFavList();
+    }
+
+    function renderFavList(){
+      const list = document.getElementById('favoritesList');
+      const favs = JSON.parse(localStorage.getItem('eb_favs')||'[]');
+      if(!favs.length){ list.innerHTML = '<div class="muted">Heç bir favoriniz yoxdur.</div>'; return; }
+      list.innerHTML='';
+      favs.forEach(id=>{
+        const p = PRODUCTS.find(x=>x.id===id);
+        const div = document.createElement('div'); div.className='fav-item';
+        div.innerHTML = `<img src="${p.img}" style="width:100%;height:140px;object-fit:cover;border-radius:8px"><div style="margin-top:8px;font-weight:700">${p.title}</div><div style="color:var(--muted)">${p.price}</div><div style="margin-top:8px;display:flex;gap:8px"><button class="btn-white" onclick="quickOrder(${p.id})">WhatsApp ilə sifariş</button><button class="btn-white" onclick="removeFav(${p.id})">Sil</button></div>`;
+        list.appendChild(div);
+      });
+    }
+
+    function removeFav(id){
+      const favs = JSON.parse(localStorage.getItem('eb_favs')||'[]');
+      const idx = favs.indexOf(id); if(idx>-1) favs.splice(idx,1);
+      localStorage.setItem('eb_favs', JSON.stringify(favs)); renderProducts(); renderFavList();
+    }
+
+    // Registration logic (simulated SMS verification)
+    const sendCodeBtn = document.getElementById('sendCodeBtn');
+    const verifyBtn = document.getElementById('verifyBtn');
+    const regMsg = document.getElementById('regMsg');
+    let simulatedCode = null;
+
+    sendCodeBtn.addEventListener('click', ()=>{
+      const phone = document.getElementById('regPhone').value.trim();
+      if(!phone) return alert('Zəhmət olmasa telefon daxil edin');
+      simulatedCode = Math.floor(100000 + Math.random()*900000).toString();
+      regMsg.textContent = 'Kod göndərildi (simulyasiya): ' + simulatedCode;
+    });
+
+    verifyBtn.addEventListener('click', ()=>{
+      const entered = document.getElementById('regCode').value.trim();
+      if(!simulatedCode) return alert('Əvvəlcə kod göndərin');
+      if(entered===simulatedCode){ regMsg.textContent = 'Nömrə təsdiqləndi ✓'; document.getElementById('regPhone').dataset.verified = '1'; }
+      else alert('Səhv kod — yenidən yoxlayın');
+    });
+
+    document.getElementById('regSave').addEventListener('click', ()=>{
+      const name = document.getElementById('regName').value.trim();
+      const surname = document.getElementById('regSurname').value.trim();
+      const phone = document.getElementById('regPhone').value.trim();
+      const email = document.getElementById('regEmail').value.trim();
+      if(!name||!surname||!phone) return alert('Ad, soyad və telefon tələb olunur');
+      if(document.getElementById('regPhone').dataset.verified!=='1') return alert('Zəhmət olmasa nömrəni təsdiqləyin');
+      const user = {name,surname,phone,email,registered:new Date().toISOString()};
+      localStorage.setItem('eb_user', JSON.stringify(user));
+      regMsg.textContent = 'Qeydiyyat tamamlandı — təşəkkürlər!';
+    });
+
+    document.getElementById('regClear').addEventListener('click', ()=>{
+      document.getElementById('registerSimple').reset(); document.getElementById('regMsg').textContent=''; simulatedCode=null; delete document.getElementById('regPhone').dataset.verified;
+    });
+
+    (function prefillUser(){
+      try{
+        const u = JSON.parse(localStorage.getItem('eb_user')||'null');
+        if(u){ document.getElementById('regName').value=u.name||''; document.getElementById('regSurname').value=u.surname||''; document.getElementById('regPhone').value=u.phone||''; document.getElementById('regEmail').value=u.email||''; document.getElementById('regPhone').dataset.verified='1'; regMsg.textContent='Nömrə artıq təsdiqlənib'; }
+      }catch(e){}
+    })();
+
+    (function init(){ renderProducts(); renderFavList(); document.getElementById('openFavoritesLink').addEventListener('click',(e)=>{e.preventDefault();location.hash='#favorites';document.getElementById('favoritesList').scrollIntoView({behavior:'smooth'})}); })();
+  </script>
+</body>
+</html>
